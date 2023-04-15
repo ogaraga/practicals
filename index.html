@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="jstyles.css">
+</head>
+<body id="mybody">
+    <form id="myform">
+        <input type="text" id="myfirstinput" placeholder="fullname"><br>
+        <input type="text" id="mysecondinput" placeholder="location"><br>
+        <input type="number" id="mythirdinput" placeholder="age"><br>
+        <input type="text" id="myfourthinput" placeholder="gender"><br>
+        <button type="button" id="mybtn">Submit</button><br>
+    </form>
+
+    <div id="feedback">
+        <i class="fa-solid fa-envelope"></i>
+        <p>Thank you for your interest, we shall be in touch!</p>
+    </div>
+<script>
+   document.getElementById("mybtn").onclick = function(){
+    let myForm;
+    let myFeedback;
+    let myFinput;
+    let mySinput;
+    let myTinput;
+    let myOinput;
+    myFeedback = document.getElementById("feedback");
+    myForm = document.getElementById("myform");
+    myFinput = document.getElementById("myfirstinput").value;
+    mySinput = document.getElementById("mysecondinput").value;
+    myTinput = document.getElementById("mythirdinput").value;
+    myOinput = document.getElementById("myfourthinput").value;
+    if(myForm.style.display == "block" && myFeedback.style.display == "none" && 
+    myFinput !="" && mySinput != "" && myTinput != "" &&
+     myOinput != ""){
+        myForm.style.display = "none";
+        myFeedback.style.display = "block";
+        document.getElementById("mybody").style.backgroundColor = "purple";
+        myForm.innerHTML = "Form validated";
+        myForm.style.color = "green";
+    }
+    else{
+        myForm.style.display = "block";
+        myFeedback.style.display = "none";
+    }
+
+   }
+</script>
+
+</body>
+</html>
